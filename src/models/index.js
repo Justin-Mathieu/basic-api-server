@@ -4,7 +4,7 @@ const { clothesModel } = require('./clothes');
 
 const DATABASE_URL = process.env.NODE_ENV === 'test' ? 'sqlite::memory:' : process.env.DATABASE_URL;
 
-const sequelize = new Sequelize('postgres://localhost:5432/basic-api-server');
+const sequelize = new Sequelize(DATABASE_URL);
 const food = foodModel(sequelize);
 const clothes = clothesModel(sequelize);
 
