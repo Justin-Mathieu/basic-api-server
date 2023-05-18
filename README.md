@@ -12,8 +12,8 @@
 
 ## Links and Resources
 
-- [GitHub Actions](https://github.com/Justin-Mathieu/basic-express-server/actions)
-- [back-end prod url](https://basic-express-server-3vce.onrender.com)
+- [GitHub Actions](https://github.com/Justin-Mathieu/basic-api-server/actions)
+- [back-end prod url](https://basic-api-server-gum1.onrender.com)
 
 ## Collaborators
 
