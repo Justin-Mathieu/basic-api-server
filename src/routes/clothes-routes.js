@@ -1,24 +1,24 @@
 const express = require('express');
 const router = express.Router();
-const { clothes } = require('../models/index');
+const { Clothes } = require('../models/index');
 
 router.get('/clothes', async (req, res, next) => {
-    let allClothes = await clothes.findAll();
+    let allClothes = await Clothes.read();
     res.status(200).send(allClothes);
 });
 
 router.get('/clothes/:id', async (req, res, next) => {
-    let clothesById = await clothes.findOne({ where: { id: req.params.id } })
+    let clothesById = await Clothes.read(req.params.id)
     res.status(200).send(clothesById);
 });
 
 router.post('/clothes', async (req, res, next) => {
-    let createClothes = await clothes.create(req.body);
+    let createClothes = await Clothes.create(req.body);
     res.status(200).send(createClothes)
 });
 
 router.put('/clothes/:id', async (req, res, next) => {
-    let newClothes = await clothes.findOne({ where: { id: req.params.id } })
+    let newClothes = await Clothes.update(req.params.id)
     let clothesData = {
         type: req.body.type,
         color: req.body.color
@@ -28,7 +28,7 @@ router.put('/clothes/:id', async (req, res, next) => {
 });
 
 router.delete('/clothes/:id', async (req, res, next) => {
-    let itemDelete = await clothes.findOne({ where: { id: req.params.id } })
+    let itemDelete = await Clothes.delete(req.params.id)
     itemDelete.destroy();
     res.status(200).send('Item Deleted')
 });
