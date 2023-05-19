@@ -1,6 +1,6 @@
 # basic-api-server
 
-## 401d53 Lab 3 basic api server
+## 401d53 Lab 4 basic api server with collections and associations
 
 ## Project: Basic api server
 
@@ -8,7 +8,7 @@
 
 ## Problem Domain
 
-- Practice with basic server routing and testing.
+- Practice with basic server, collections class and associations.
 
 ## Links and Resources
 
@@ -51,7 +51,7 @@ Used demo code as permitted.
 
 ## UML
 
-![UML](./assets/Screenshot%202023-05-18%20181231.png)
+![UML](./assets//Lab03UML.png)
 
 
 

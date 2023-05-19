@@ -1,15 +1,23 @@
 const { Sequelize, DataTypes } = require('sequelize');
-const { foodModel } = require('./food');
-const { clothesModel } = require('./clothes');
+const { food } = require('./food');
+const { clothes } = require('./clothes');
+const Collection = require('./collection')
 
 const DATABASE_URL = process.env.NODE_ENV === 'test' ? 'sqlite::memory:' : process.env.DATABASE_URL;
 
 const sequelize = new Sequelize(DATABASE_URL);
-const food = foodModel(sequelize);
-const clothes = clothesModel(sequelize);
+
+
+const foodModel = food(sequelize);
+const clothesModel = clothes(sequelize);
+
+
+foodModel.hasMany(clothesModel);
+clothesModel.belongsTo(foodModel)
+
 
 module.exports = {
     sequelize,
-    food,
-    clothes,
+    Food: new Collection(foodModel),
+    Clothes: new Collection(clothesModel),
 };

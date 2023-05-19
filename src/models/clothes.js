@@ -1,6 +1,6 @@
 const { DataTypes } = require('sequelize');
 
-function clothesModel(sequelize) {
+function clothes(sequelize) {
     return sequelize.define('clothes', {
         type: DataTypes.STRING,
         color: DataTypes.STRING
@@ -8,5 +8,5 @@ function clothesModel(sequelize) {
 }
 
 module.exports = {
-    clothesModel
+    clothes
 }
